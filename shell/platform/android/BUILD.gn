@@ -65,6 +65,7 @@ shared_library("flutter_shell_native") {
     "//flutter/runtime",
     "//flutter/runtime:libdart",
     "//flutter/shell/common",
+    "//flutter/shell/platform/android/external_view_embedder",
     "//third_party/skia",
   ]
 
@@ -437,7 +438,6 @@ action("robolectric_tests") {
     "test/io/flutter/embedding/engine/dart/DartExecutorTest.java",
     "test/io/flutter/embedding/engine/plugins/shim/ShimPluginRegistryTest.java",
     "test/io/flutter/embedding/engine/renderer/FlutterRendererTest.java",
-    "test/io/flutter/embedding/engine/systemchannels/PlatformChannelTest.java",
     "test/io/flutter/external/FlutterLaunchTests.java",
     "test/io/flutter/plugin/common/StandardMessageCodecTest.java",
     "test/io/flutter/plugin/editing/InputConnectionAdaptorTest.java",
@@ -447,6 +447,7 @@ action("robolectric_tests") {
     "test/io/flutter/plugins/GeneratedPluginRegistrant.java",
     "test/io/flutter/util/FakeKeyEvent.java",
     "test/io/flutter/util/PreconditionsTest.java",
+    "test/io/flutter/view/AccessibilityBridgeTest.java",
   ]
 
   outputs = [

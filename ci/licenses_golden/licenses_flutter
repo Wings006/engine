@@ -475,6 +475,7 @@ FILE: ../../../flutter/lib/web_ui/lib/src/engine/surface/image_filter.dart
 FILE: ../../../flutter/lib/web_ui/lib/src/engine/surface/offset.dart
 FILE: ../../../flutter/lib/web_ui/lib/src/engine/surface/opacity.dart
 FILE: ../../../flutter/lib/web_ui/lib/src/engine/surface/painting.dart
+FILE: ../../../flutter/lib/web_ui/lib/src/engine/surface/path.dart
 FILE: ../../../flutter/lib/web_ui/lib/src/engine/surface/path_metrics.dart
 FILE: ../../../flutter/lib/web_ui/lib/src/engine/surface/picture.dart
 FILE: ../../../flutter/lib/web_ui/lib/src/engine/surface/platform_view.dart
@@ -482,6 +483,7 @@ FILE: ../../../flutter/lib/web_ui/lib/src/engine/surface/recording_canvas.dart
 FILE: ../../../flutter/lib/web_ui/lib/src/engine/surface/scene.dart
 FILE: ../../../flutter/lib/web_ui/lib/src/engine/surface/scene_builder.dart
 FILE: ../../../flutter/lib/web_ui/lib/src/engine/surface/surface.dart
+FILE: ../../../flutter/lib/web_ui/lib/src/engine/surface/surface_stats.dart
 FILE: ../../../flutter/lib/web_ui/lib/src/engine/surface/transform.dart
 FILE: ../../../flutter/lib/web_ui/lib/src/engine/test_embedding.dart
 FILE: ../../../flutter/lib/web_ui/lib/src/engine/text/font_collection.dart
@@ -492,6 +494,7 @@ FILE: ../../../flutter/lib/web_ui/lib/src/engine/text/ruler.dart
 FILE: ../../../flutter/lib/web_ui/lib/src/engine/text/unicode_range.dart
 FILE: ../../../flutter/lib/web_ui/lib/src/engine/text/word_break_properties.dart
 FILE: ../../../flutter/lib/web_ui/lib/src/engine/text/word_breaker.dart
+FILE: ../../../flutter/lib/web_ui/lib/src/engine/text_editing/autofill_hint.dart
 FILE: ../../../flutter/lib/web_ui/lib/src/engine/text_editing/input_type.dart
 FILE: ../../../flutter/lib/web_ui/lib/src/engine/text_editing/text_editing.dart
 FILE: ../../../flutter/lib/web_ui/lib/src/engine/util.dart
@@ -592,6 +595,8 @@ FILE: ../../../flutter/shell/common/shell_io_manager.cc
 FILE: ../../../flutter/shell/common/shell_io_manager.h
 FILE: ../../../flutter/shell/common/shell_test.cc
 FILE: ../../../flutter/shell/common/shell_test.h
+FILE: ../../../flutter/shell/common/shell_test_external_view_embedder.cc
+FILE: ../../../flutter/shell/common/shell_test_external_view_embedder.h
 FILE: ../../../flutter/shell/common/shell_test_platform_view.cc
 FILE: ../../../flutter/shell/common/shell_test_platform_view.h
 FILE: ../../../flutter/shell/common/shell_test_platform_view_gl.cc
@@ -650,6 +655,9 @@ FILE: ../../../flutter/shell/platform/android/android_surface_vulkan.cc
 FILE: ../../../flutter/shell/platform/android/android_surface_vulkan.h
 FILE: ../../../flutter/shell/platform/android/apk_asset_provider.cc
 FILE: ../../../flutter/shell/platform/android/apk_asset_provider.h
+FILE: ../../../flutter/shell/platform/android/external_view_embedder/external_view_embedder.cc
+FILE: ../../../flutter/shell/platform/android/external_view_embedder/external_view_embedder.h
+FILE: ../../../flutter/shell/platform/android/external_view_embedder/external_view_embedder_unittests.cc
 FILE: ../../../flutter/shell/platform/android/flutter_main.cc
 FILE: ../../../flutter/shell/platform/android/flutter_main.h
 FILE: ../../../flutter/shell/platform/android/io/flutter/Log.java
@@ -783,12 +791,14 @@ FILE: ../../../flutter/shell/platform/common/cpp/client_wrapper/include/flutter/
 FILE: ../../../flutter/shell/platform/common/cpp/client_wrapper/include/flutter/method_channel.h
 FILE: ../../../flutter/shell/platform/common/cpp/client_wrapper/include/flutter/method_codec.h
 FILE: ../../../flutter/shell/platform/common/cpp/client_wrapper/include/flutter/method_result.h
+FILE: ../../../flutter/shell/platform/common/cpp/client_wrapper/include/flutter/method_result_functions.h
 FILE: ../../../flutter/shell/platform/common/cpp/client_wrapper/include/flutter/plugin_registrar.h
 FILE: ../../../flutter/shell/platform/common/cpp/client_wrapper/include/flutter/plugin_registry.h
 FILE: ../../../flutter/shell/platform/common/cpp/client_wrapper/include/flutter/standard_message_codec.h
 FILE: ../../../flutter/shell/platform/common/cpp/client_wrapper/include/flutter/standard_method_codec.h
 FILE: ../../../flutter/shell/platform/common/cpp/client_wrapper/method_call_unittests.cc
 FILE: ../../../flutter/shell/platform/common/cpp/client_wrapper/method_channel_unittests.cc
+FILE: ../../../flutter/shell/platform/common/cpp/client_wrapper/method_result_functions_unittests.cc
 FILE: ../../../flutter/shell/platform/common/cpp/client_wrapper/plugin_registrar.cc
 FILE: ../../../flutter/shell/platform/common/cpp/client_wrapper/plugin_registrar_unittests.cc
 FILE: ../../../flutter/shell/platform/common/cpp/client_wrapper/standard_codec.cc
@@ -877,6 +887,7 @@ FILE: ../../../flutter/shell/platform/darwin/ios/framework/Source/FlutterViewCon
 FILE: ../../../flutter/shell/platform/darwin/ios/framework/Source/FlutterViewController_Internal.h
 FILE: ../../../flutter/shell/platform/darwin/ios/framework/Source/SemanticsObject.h
 FILE: ../../../flutter/shell/platform/darwin/ios/framework/Source/SemanticsObject.mm
+FILE: ../../../flutter/shell/platform/darwin/ios/framework/Source/SemanticsObjectTest.mm
 FILE: ../../../flutter/shell/platform/darwin/ios/framework/Source/accessibility_bridge.h
 FILE: ../../../flutter/shell/platform/darwin/ios/framework/Source/accessibility_bridge.mm
 FILE: ../../../flutter/shell/platform/darwin/ios/framework/Source/accessibility_bridge_ios.h
@@ -1152,8 +1163,15 @@ FILE: ../../../flutter/shell/platform/glfw/public/flutter_glfw.h
 FILE: ../../../flutter/shell/platform/glfw/text_input_plugin.cc
 FILE: ../../../flutter/shell/platform/glfw/text_input_plugin.h
 FILE: ../../../flutter/shell/platform/linux/fl_dart_project.cc
+FILE: ../../../flutter/shell/platform/linux/fl_engine.cc
+FILE: ../../../flutter/shell/platform/linux/fl_engine_private.h
+FILE: ../../../flutter/shell/platform/linux/fl_renderer.cc
+FILE: ../../../flutter/shell/platform/linux/fl_renderer.h
+FILE: ../../../flutter/shell/platform/linux/fl_renderer_x11.cc
+FILE: ../../../flutter/shell/platform/linux/fl_renderer_x11.h
 FILE: ../../../flutter/shell/platform/linux/fl_view.cc
 FILE: ../../../flutter/shell/platform/linux/public/flutter_linux/fl_dart_project.h
+FILE: ../../../flutter/shell/platform/linux/public/flutter_linux/fl_engine.h
 FILE: ../../../flutter/shell/platform/linux/public/flutter_linux/fl_view.h
 FILE: ../../../flutter/shell/platform/linux/public/flutter_linux/flutter_linux.h
 FILE: ../../../flutter/shell/platform/windows/angle_surface_manager.cc
@@ -1177,6 +1195,9 @@ FILE: ../../../flutter/shell/platform/windows/keyboard_hook_handler.h
 FILE: ../../../flutter/shell/platform/windows/platform_handler.cc
 FILE: ../../../flutter/shell/platform/windows/platform_handler.h
 FILE: ../../../flutter/shell/platform/windows/public/flutter_windows.h
+FILE: ../../../flutter/shell/platform/windows/string_conversion.cc
+FILE: ../../../flutter/shell/platform/windows/string_conversion.h
+FILE: ../../../flutter/shell/platform/windows/string_conversion_unittests.cc
 FILE: ../../../flutter/shell/platform/windows/text_input_plugin.cc
 FILE: ../../../flutter/shell/platform/windows/text_input_plugin.h
 FILE: ../../../flutter/shell/platform/windows/win32_flutter_window.cc
