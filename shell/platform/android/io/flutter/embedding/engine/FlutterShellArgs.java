@@ -52,6 +52,8 @@ public class FlutterShellArgs {
   public static final String ARG_OBSERVATORY_PORT = "--observatory-port=";
   public static final String ARG_KEY_DART_FLAGS = "dart-flags";
   public static final String ARG_DART_FLAGS = "--dart-flags";
+  public static final String ARG_KEY_TRACE_SYSTRACE = "trace-systrace";
+  public static final String ARG_TRACE_SYSTRACE = "--trace-systrace";
 
   @NonNull
   public static FlutterShellArgs fromIntent(@NonNull Intent intent) {
@@ -104,6 +106,9 @@ public class FlutterShellArgs {
     }
     if (intent.getBooleanExtra(ARG_KEY_VERBOSE_LOGGING, false)) {
       args.add(ARG_VERBOSE_LOGGING);
+    }
+    if (intent.getBooleanExtra(ARG_KEY_TRACE_SYSTRACE, false)) {
+      args.add(ARG_TRACE_SYSTRACE);
     }
 
     // NOTE: all flags provided with this argument are subject to filtering
